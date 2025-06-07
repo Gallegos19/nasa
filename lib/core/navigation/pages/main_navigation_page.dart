@@ -5,7 +5,8 @@ import 'package:nasa_explorer/core/navigation/cubit/navigation_cubit.dart';
 import 'package:nasa_explorer/features/discovery/presentation/pages/discovery_page.dart';
 import 'package:nasa_explorer/features/gallery/presentation/pages/gallery_page.dart';
 import 'package:nasa_explorer/features/home/presentation/pages/home_page.dart';
-import 'package:nasa_explorer/features/home/presentation/pages/placeholde_pages.dart';
+import 'package:nasa_explorer/features/home/presentation/pages/placeholde_pages.dart' 
+    show SolarSystemPage, ProfilePage;
 import '../../../../di/injection_container.dart' as di;
 
 class MainNavigationPage extends StatelessWidget {

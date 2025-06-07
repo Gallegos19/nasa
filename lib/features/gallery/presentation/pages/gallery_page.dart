@@ -3,15 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:nasa_explorer/core/constants/app_color.dart';
 import 'package:nasa_explorer/features/gallery/presentation/widgets/rover_selector.dart';
+import 'package:nasa_explorer/features/gallery/presentation/widgets/mars_photo_card.dart';
+import 'package:nasa_explorer/features/gallery/presentation/widgets/photo_detail_modal.dart';
 import 'package:nasa_explorer/features/home/presentation/widgets/custom_app_bar.dart';
 import 'package:nasa_explorer/features/home/presentation/widgets/error_widget.dart';
 import 'package:nasa_explorer/features/home/presentation/widgets/loading_widget.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/constants/app_constants.dart';
-
 import '../../../../di/injection_container.dart' as di;
 import '../cubit/gallery_cubit.dart';
-
 
 class GalleryPage extends StatelessWidget {
   const GalleryPage({Key? key}) : super(key: key);
@@ -253,7 +253,7 @@ class _GalleryPageContent extends StatelessWidget {
       backgroundColor: Colors.transparent,
       builder: (context) => PhotoDetailModal(
         photo: photo,
-        allPhotos: photos,
+        allPhotos: photos.cast(),
       ),
     );
   }

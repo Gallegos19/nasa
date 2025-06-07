@@ -1,9 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:nasa_explorer/features/discovery/domain/usescases/get_neos_by_date_range_usecase.dart';
-import 'package:nasa_explorer/features/home/domain/usescases/get_today_apod_usecase.dart';
+import 'package:nasa_explorer/features/discovery/domain/usescases/get_today_neos_usecase.dart';
 import '../../domain/entities/neo_entity.dart';
-
 
 // States
 abstract class DiscoveryState extends Equatable {
@@ -46,13 +45,13 @@ class DiscoveryRefreshing extends DiscoveryLoaded {
   }) : super(neos: neos, isFromCache: isFromCache);
 }
 
-// Cubit
+// Cubit - CORREGIDO: usar GetTodayNeosUseCase en lugar de GetTodayApodUseCase
 class DiscoveryCubit extends Cubit<DiscoveryState> {
-  final GetTodayApodUseCase _getTodayNeosUseCase;
+  final GetTodayNeosUseCase _getTodayNeosUseCase;
   final GetNeosByDateRangeUseCase _getNeosByDateRangeUseCase;
 
   DiscoveryCubit({
-    required GetTodayApodUseCase getTodayNeosUseCase,
+    required GetTodayNeosUseCase getTodayNeosUseCase,
     required GetNeosByDateRangeUseCase getNeosByDateRangeUseCase,
   })  : _getTodayNeosUseCase = getTodayNeosUseCase,
         _getNeosByDateRangeUseCase = getNeosByDateRangeUseCase,
