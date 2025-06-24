@@ -45,7 +45,6 @@ class DiscoveryRefreshing extends DiscoveryLoaded {
   }) : super(neos: neos, isFromCache: isFromCache);
 }
 
-// Cubit - CORREGIDO: usar GetTodayNeosUseCase en lugar de GetTodayApodUseCase
 class DiscoveryCubit extends Cubit<DiscoveryState> {
   final GetTodayNeosUseCase _getTodayNeosUseCase;
   final GetNeosByDateRangeUseCase _getNeosByDateRangeUseCase;

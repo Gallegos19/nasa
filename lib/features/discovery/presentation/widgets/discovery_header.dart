@@ -1,5 +1,4 @@
 
-// lib/features/discovery/presentation/widgets/discovery_header.dart
 import 'package:flutter/material.dart';
 import 'package:nasa_explorer/core/constants/app_color.dart';
 import '../../../../core/constants/app_text_styles.dart';
