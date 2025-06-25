@@ -1,3 +1,5 @@
+import 'package:injectable/injectable.dart';
+
 import '../../../../core/errors/failures.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/network/network_info.dart';
@@ -7,6 +9,7 @@ import '../../domain/repositories/neo_repository.dart';
 import '../datasource/neo_remote_datasource.dart';
 import '../datasource/neo_local_datasource.dart';
 
+@LazySingleton(as: NeoRepository)
 class NeoRepositoryImpl implements NeoRepository {
   final NeoRemoteDataSource _remoteDataSource;
   final NeoLocalDataSource _localDataSource;

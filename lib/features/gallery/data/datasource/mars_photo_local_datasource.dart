@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:nasa_explorer/features/gallery/data/models/mars_photo.dart';
 
 import '../../../../core/services/cache_service.dart';
@@ -10,6 +11,7 @@ abstract class MarsPhotoLocalDataSource {
   Future<void> clearCache();
 }
 
+@LazySingleton(as: MarsPhotoLocalDataSource)
 class MarsPhotoLocalDataSourceImpl implements MarsPhotoLocalDataSource {
   final CacheService _cacheService;
 

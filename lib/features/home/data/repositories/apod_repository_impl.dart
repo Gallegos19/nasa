@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:nasa_explorer/core/utils/either.dart';
 import 'package:nasa_explorer/di/injection_container.dart';
 import 'package:nasa_explorer/features/home/data/datasource/apod_local_datasource.dart';
@@ -9,7 +10,7 @@ import '../../../../core/network/network_info.dart';
 import '../../domain/entities/apod_entity.dart';
 import '../../domain/repositories/apod_repository.dart';
 
-
+@LazySingleton(as: ApodRepository)
 class ApodRepositoryImpl implements ApodRepository {
   final ApodRemoteDataSource _remoteDataSource;
   final ApodLocalDataSource _localDataSource;

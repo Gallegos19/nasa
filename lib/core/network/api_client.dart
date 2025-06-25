@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import '../config/api_config.dart';
 import '../config/app_config.dart';
@@ -7,6 +8,7 @@ import '../network/auth_interceptor.dart';
 import '../network/cache_interceptor.dart';
 import 'network_info.dart';
 
+@lazySingleton
 class ApiClient {
   late final Dio _dio;
   final NetworkInfo _networkInfo;

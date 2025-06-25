@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:nasa_explorer/core/constants/app_color.dart';
+import 'package:nasa_explorer/di/injection.dart';
 import 'package:nasa_explorer/features/home/presentation/widgets/error_widget.dart';
 import 'package:nasa_explorer/features/home/presentation/widgets/loading_widget.dart';
 import '../../../../core/constants/app_text_styles.dart';
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => di.sl<HomeCubit>()..loadTodayApod(),
+      create: (_) => getIt<HomeCubit>()..loadTodayApod(),
       child: const _HomePageContent(),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:nasa_explorer/features/gallery/data/models/mars_photo.dart';
 
 import '../../../../core/network/api_client.dart';
@@ -10,7 +11,7 @@ abstract class MarsPhotoRemoteDataSource {
   Future<List<MarsPhotoModel>> getPhotosByEarthDate(String roverName, String earthDate);
   Future<List<MarsPhotoModel>> getPhotosByCamera(String roverName, String camera, {int? sol});
 }
-
+@LazySingleton(as: MarsPhotoRemoteDataSource)
 class MarsPhotoRemoteDataSourceImpl implements MarsPhotoRemoteDataSource {
   final ApiClient _apiClient;
 

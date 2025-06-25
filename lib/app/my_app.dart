@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nasa_explorer/app/theme/app_theme.dart';
 import 'package:nasa_explorer/core/navigation/cubit/navigation_cubit.dart';
 import 'package:nasa_explorer/core/navigation/pages/main_navigation_page.dart';
-import '../di/injection_container.dart' as di;
+import 'package:nasa_explorer/di/injection.dart';
 
 class NasaExplorerApp extends StatelessWidget {
   const NasaExplorerApp({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class NasaExplorerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => di.sl<NavigationCubit>(),
+      create: (_) => getIt<NavigationCubit>(),
       child: MaterialApp(
         title: 'NASA Explorer',
         debugShowCheckedModeBanner: false,

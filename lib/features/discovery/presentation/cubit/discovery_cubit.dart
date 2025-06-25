@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 import 'package:nasa_explorer/features/discovery/domain/usescases/get_neos_by_date_range_usecase.dart';
 import 'package:nasa_explorer/features/discovery/domain/usescases/get_today_neos_usecase.dart';
 import '../../domain/entities/neo_entity.dart';
@@ -45,6 +46,7 @@ class DiscoveryRefreshing extends DiscoveryLoaded {
   }) : super(neos: neos, isFromCache: isFromCache);
 }
 
+@injectable
 class DiscoveryCubit extends Cubit<DiscoveryState> {
   final GetTodayNeosUseCase _getTodayNeosUseCase;
   final GetNeosByDateRangeUseCase _getNeosByDateRangeUseCase;

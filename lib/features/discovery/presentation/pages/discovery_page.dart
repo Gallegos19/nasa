@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nasa_explorer/core/constants/app_color.dart';
+import 'package:nasa_explorer/di/injection.dart';
 import 'package:nasa_explorer/features/home/presentation/widgets/custom_app_bar.dart';
 import 'package:nasa_explorer/features/home/presentation/widgets/error_widget.dart';
 import 'package:nasa_explorer/features/home/presentation/widgets/loading_widget.dart';
@@ -17,7 +18,7 @@ class DiscoveryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => di.sl<DiscoveryCubit>()..loadTodayNeos(),
+      create: (_) => getIt<DiscoveryCubit>()..loadTodayNeos(),
       child: const _DiscoveryPageContent(),
     );
   }

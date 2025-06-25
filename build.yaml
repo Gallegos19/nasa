@@ -1,9 +1,11 @@
 targets:
   $default:
     builders:
+      injectable_generator:injectable_builder:
+        enabled: true
       json_serializable:
+        enabled: true
         options:
-          # Creates `toJson()` and `fromJson()` methods
           any_map: false
           checked: false
           create_factory: true

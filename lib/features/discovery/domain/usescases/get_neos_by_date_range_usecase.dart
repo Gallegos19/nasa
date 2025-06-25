@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:nasa_explorer/core/utils/either.dart';
 
 import '../../../../core/errors/failures.dart';
@@ -12,6 +13,7 @@ class NeoDateRangeParams {
   NeoDateRangeParams({required this.startDate, required this.endDate});
 }
 
+@lazySingleton
 class GetNeosByDateRangeUseCase implements UseCase<List<NeoEntity>, NeoDateRangeParams> {
   final NeoRepository _repository;
 

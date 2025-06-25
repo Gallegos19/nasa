@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:nasa_explorer/core/utils/either.dart';
 import 'package:nasa_explorer/di/injection_container.dart';
 import 'package:nasa_explorer/features/gallery/data/datasource/mars_photo_local_datasource.dart';
@@ -9,7 +10,7 @@ import '../../../../core/network/network_info.dart';
 import '../../domain/entities/mars_photo_entity.dart';
 import '../../domain/repositories/mars_photo_repository.dart';
 
-
+@LazySingleton(as: MarsPhotoRepository)
 class MarsPhotoRepositoryImpl implements MarsPhotoRepository {
   final MarsPhotoRemoteDataSource _remoteDataSource;
   final MarsPhotoLocalDataSource _localDataSource;

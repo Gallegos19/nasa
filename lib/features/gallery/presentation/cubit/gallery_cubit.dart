@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 import 'package:nasa_explorer/features/gallery/domain/usescases/get_latest_mars_photos_usecase.dart';
 import 'package:nasa_explorer/features/gallery/domain/usescases/get_mars_photos_by_sol_usecase.dart';
 import '../../domain/entities/mars_photo_entity.dart';
@@ -49,6 +50,7 @@ class GalleryRefreshing extends GalleryLoaded {
 }
 
 // Cubit
+@injectable
 class GalleryCubit extends Cubit<GalleryState> {
   final GetLatestMarsPhotosUseCase _getLatestPhotosUseCase;
   final GetMarsPhotosBySolUseCase _getPhotosBySolUseCase;

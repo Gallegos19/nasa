@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 import 'package:nasa_explorer/features/home/domain/usescases/get_apod_by_date_usecase.dart';
 import 'package:nasa_explorer/features/home/domain/usescases/get_today_apod_usecase.dart';
 import '../../domain/entities/apod_entity.dart';
@@ -47,6 +48,7 @@ class HomeRefreshing extends HomeLoaded {
 }
 
 // Cubit
+@injectable
 class HomeCubit extends Cubit<HomeState> {
   final GetTodayApodUseCase _getTodayApodUseCase;
   final GetApodByDateUseCase _getApodByDateUseCase;

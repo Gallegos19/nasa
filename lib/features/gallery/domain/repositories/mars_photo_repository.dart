@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:nasa_explorer/core/utils/either.dart';
 import 'package:nasa_explorer/di/injection_container.dart';
 

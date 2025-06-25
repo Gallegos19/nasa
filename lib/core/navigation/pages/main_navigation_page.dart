@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nasa_explorer/core/constants/app_color.dart';
 import 'package:nasa_explorer/core/navigation/cubit/navigation_cubit.dart';
+import 'package:nasa_explorer/di/injection.dart';
 import 'package:nasa_explorer/features/discovery/presentation/pages/discovery_page.dart';
 import 'package:nasa_explorer/features/gallery/presentation/pages/gallery_page.dart';
 import 'package:nasa_explorer/features/home/presentation/pages/home_page.dart';
 import 'package:nasa_explorer/features/home/presentation/pages/placeholde_pages.dart' 
     show SolarSystemPage, ProfilePage;
-import '../../../../di/injection_container.dart' as di;
 
 class MainNavigationPage extends StatelessWidget {
   final NavigationTab initialTab;
@@ -20,7 +20,7 @@ class MainNavigationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => di.sl<NavigationCubit>(),
+      create: (_) => getIt<NavigationCubit>(),
       child: BlocBuilder<NavigationCubit, NavigationState>(
         builder: (context, state) {
           return Scaffold(

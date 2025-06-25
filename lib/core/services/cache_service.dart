@@ -1,16 +1,12 @@
 import 'dart:convert';
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+@lazySingleton
 class CacheService {
-  static CacheService? _instance;
-  static SharedPreferences? _prefs;
+  SharedPreferences? _prefs;
 
-  CacheService._();
-
-  factory CacheService() {
-    _instance ??= CacheService._();
-    return _instance!;
-  }
+  CacheService(); // Constructor simple
 
   Future<void> init() async {
     _prefs ??= await SharedPreferences.getInstance();

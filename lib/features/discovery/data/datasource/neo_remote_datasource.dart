@@ -1,3 +1,5 @@
+import 'package:injectable/injectable.dart';
+
 import '../../../../core/network/api_client.dart';
 import '../../../../core/config/api_config.dart';
 import '../../../../core/errors/exceptions.dart';
@@ -9,6 +11,7 @@ abstract class NeoRemoteDataSource {
   Future<NeoModel> getNeoById(String neoId);
 }
 
+@LazySingleton(as: NeoRemoteDataSource)
 class NeoRemoteDataSourceImpl implements NeoRemoteDataSource {
   final ApiClient _apiClient;
 

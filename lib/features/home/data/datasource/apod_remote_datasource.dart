@@ -1,3 +1,5 @@
+import 'package:injectable/injectable.dart';
+
 import '../../../../core/network/api_client.dart';
 import '../../../../core/config/api_config.dart';
 import '../../../../core/errors/exceptions.dart';
@@ -8,7 +10,7 @@ abstract class ApodRemoteDataSource {
   Future<ApodModel> getApodByDate(String date);
   Future<List<ApodModel>> getApodRange(String startDate, String endDate);
 }
-
+@LazySingleton(as: ApodRemoteDataSource)
 class ApodRemoteDataSourceImpl implements ApodRemoteDataSource {
   final ApiClient _apiClient;
 

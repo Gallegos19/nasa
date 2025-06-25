@@ -1,3 +1,5 @@
+import 'package:injectable/injectable.dart';
+
 import '../../../../core/services/cache_service.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/errors/exceptions.dart';
@@ -11,6 +13,7 @@ abstract class NeoLocalDataSource {
   Future<void> clearCache();
 }
 
+@LazySingleton(as: NeoLocalDataSource)
 class NeoLocalDataSourceImpl implements NeoLocalDataSource {
   final CacheService _cacheService;
 

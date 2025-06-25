@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'app/my_app.dart';
 import 'core/services/cache_service.dart';
-import 'di/injection_container.dart' as di;
+import 'di/injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,8 +31,8 @@ void main() async {
 
 Future<void> _initializeServices() async {
   try {
-    // Initialize dependency injection
-    await di.init();
+    // Initialize dependency injection with Injectable
+    configureDependencies();
     
     // Initialize cache service
     await CacheService().init();

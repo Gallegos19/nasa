@@ -1,3 +1,5 @@
+import 'package:injectable/injectable.dart';
+
 import '../../../../core/services/storage_service.dart';
 import '../../../../core/services/cache_service.dart';
 import '../../../../core/constants/app_constants.dart';
@@ -11,7 +13,7 @@ abstract class ApodLocalDataSource {
   Future<void> cacheApodList(String key, List<ApodModel> apods);
   Future<void> clearCache();
 }
-
+@LazySingleton(as: ApodLocalDataSource)
 class ApodLocalDataSourceImpl implements ApodLocalDataSource {
   final CacheService _cacheService;
 

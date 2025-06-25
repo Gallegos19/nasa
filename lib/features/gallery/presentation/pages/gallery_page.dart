@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:nasa_explorer/core/constants/app_color.dart';
+import 'package:nasa_explorer/di/injection.dart';
 import 'package:nasa_explorer/features/gallery/presentation/widgets/rover_selector.dart';
 import 'package:nasa_explorer/features/gallery/presentation/widgets/mars_photo_card.dart';
 import 'package:nasa_explorer/features/gallery/presentation/widgets/photo_detail_modal.dart';
@@ -19,7 +20,7 @@ class GalleryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => di.sl<GalleryCubit>()..loadLatestPhotos(),
+      create: (_) => getIt<GalleryCubit>()..loadLatestPhotos(),
       child: const _GalleryPageContent(),
     );
   }
